@@ -1,0 +1,38 @@
+---
+title: "Developing Data Products Week 2 Assignment"
+author: "Joseph Michalski"
+date: "8/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+
+Create a web page using R Markdown that features a map created with Leaflet. 
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity! 
+
+## My Submission
+
+Using the below code, I created an interactive map of my local area.
+
+```{r map}
+library(leaflet)
+library(dplyr)
+
+
+map <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat = 43.0389, lng = 87.9065, popup="Milwaukee, WI") %>%
+  addMarkers(lat = 43.0117, lng = 88.2315, popup="Waukesha, WI") %>%
+  addMarkers(lat = 43.0495, lng = 88.0076, popup="Wauwatosa, WI") %>%
+  addMarkers(lat = 42.9764, lng = 88.1084, popup="New Berlin, WI") %>%
+  addMarkers(lat = 43.0606, lng = 88.1065, popup="Brookfield, WI")
+  
+map
+```
